@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="pouchdb.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="TemplateMo">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+
+    <title>Sport</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Quicksand:300,400"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    />
+    <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/js/libs/plugins/mdtoast.min.css">
+   <!--<link rel="stylesheet" href="assets/css/style.css">-->
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-stand-blog.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+</head>
+<!-- Header -->
+<header class="">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><h2>Sport<em>.</em></h2></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio
+              <span class="sr-only">(current)</span>
+            </a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">Sobre nosotros</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="index1.html">Agenda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html">Entradas del blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="post-details.html">Detalles del post</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contactanos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<br><br><br><br>
+
+<body>
+  <section class="contact-us">
+    <div class="container">
+      <div class="row">
+        <div class="col-log-12">
+          <div class="down-contact">
+            <div class="row">
+              <div class="col-lg-8">
+                <div class="sidebar-item contact-form">
+                  <div class="sidebar-heading">
+                    <h2>Agenda tu dia</h2>
+                  </div>
+                  <div class="content">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                          <fieldset>
+                            <label for="nombreCompleto">Nombre:</label>
+                          <input placeholder="Nombre y apellidos" type="text" name="nombreCompleto" id="nombreCompleto" />
+                          </fieldset>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                          <fieldset>
+                            <label for="direccion">Dirección:</label>
+                            <textarea placeholder="Escribe la dirección..." name="direccion" id=direccion rows="4" cols="30"></textarea>
+                          </fieldset>
+                        </div>
+                        <div class="col-md-12 col-sm-12">
+                          <fieldset>
+                            <label for="telefono">Teléfono:</label>
+                            <input placeholder="Por ejemplo, 555 222 333" type="tel" name="telefono" id="telefono" />
+                          </fieldset>
+                        </div>
+                        <div class="col-lg-12">
+                          <fieldset>
+                            <button id="btnGuardar" class="btn btn-sm btn-primary">Guardar</button>
+                          </fieldset>
+                        </div>
+                        <div class="col-lg-12">
+                          <fieldset>
+                            <button id="btnGuardarCambios" class="btn btn-primary">Guardar cambios</button>
+                          </fieldset>
+                        </div>
+                        <div class="col-lg-12">
+                          <fieldset>
+                            <button id="btnCancelarEdicion" class="btn btn-primary">Cancelar</button>
+                          </fieldset>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div> 
+
+              <div class="col-lg-4">
+                <div class="sidebar-item contact-information">
+                  <div class="sidebar-heading">
+                    <h2>Consulta tu ubicacion actual</h2>
+                  </div>
+                  <div class="content">
+                    <div id="location-btn" class="fab-marker">
+                      <div id="modal"> <a href="#">Ubicacion </a> </div>
+                      <!-- <i class="fa fa-map-marker-alt"></i> -->
+                    </div>
+                    <ul>
+                      <li>
+                        <h5>090-484-8080</h5>
+                        <span>Numero de telefono</span>
+                      </li>
+                      <div class="camara-contenedor fadeIn fast oculto" align="center">
+                        <video id="player" autoplay style="height: 300px"></video>
+                        <button id="tomar-foto-btn">
+                          <i class="fa fa-camera"></i>
+                          Tomar Foto
+                        </button>
+                         <!-- boton de enviar -->
+                          <div id="photo-btn" class="fab-photo">
+                            <i class="fa fa-camera"></i>
+                          </div>
+                      </div>
+                      </div>
+                      <li>
+                        <h5>sporty@gmail.com</h5>
+                        <span>Correo electronico</span>
+                      </li>
+                      <li>
+                        <h5>Barrio gdalupe, 
+                          <br>Praesent laoreet 10660</h5>
+                        <span>STREET ADDRESS</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>  
+  </section>
+  <div class="container">
+  <h1>Datos de la agenda</h1>
+  <br/>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Dirección</th>
+        <th>Teléfono</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
+      </tr>
+    </thead>
+    <tbody id="cuerpoTabla">
+      <!-- <div id="modal"> <a href="#">Ubicacion </a> </div> -->
+    </tbody>
+  </table>
+</div>
+<!-- Fin Modal -->
+</div>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <ul class="social-icons">
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Behance</a></li>
+            <li><a href="#">Linkedin</a></li>
+            <li><a href="#">Dribbble</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-12">
+          <div class="copyright-text">
+            <p>Copyright 2020 Stand Blog Co.
+                  
+               | Design: <a rel="nofollow" href="#" target="_parent"></a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+
+  <script src="assets/js/camare-class.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="assets/js/libs/plugins/mdtoast.min.js"></script>
+
+  <!-- <script src="/vendor/jquery/jquery.min.js"></script> -->
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Additional Scripts -->
+  <script src="assets/js/custom.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/owl.js"></script>
+  <script src="assets/js/slick.js"></script>
+  <script src="assets/js/isotope.js"></script>
+  <script src="assets/js/accordions.js"></script>
+
+  <script language = "text/Javascript"> 
+    cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+    function clearField(t){                   //declaring the array outside of the
+    if(! cleared[t.id]){                      // function makes it static and global
+        cleared[t.id] = 1;  // you could use true and false, but that's more typing
+        t.value='';         // with more chance of typos
+        t.style.color='#fff';
+        }
+    }
+  </script>
+</body>
+
+</html>
