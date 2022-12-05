@@ -22,7 +22,7 @@ $btnGuardar.addEventListener("click", function() {
         nombre: nombreCompleto,
         titulo: titulo, 
         direccion: direccion,
-        telefono: telefono,
+        telefono: telefono
       })
       .then(function(respuesta) {
         if (respuesta.ok) {

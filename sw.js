@@ -6,8 +6,8 @@ const DYNAMIC_CACHE = 'dynamic_v1';
 const INMUTABLE_CACHE = 'inmutable_v1';
 
 const APP_SHELL = [
-    '/',
     'index.html',
+    'index1.html',
     'about.html',
     'blog.html',
     'contact.html',
@@ -87,4 +87,13 @@ self.addEventListener('fetch', e=>{
             }
         });
         e.respondWith(respuesta);
+});
+
+ //tareas asincronas
+ self.addEventListener('sync',e=>{
+    console.log('SW:Sync');
+    if(e.tag === 'nuevo-post'){
+        //postear a DB cuando hay conexion
+        e.waitUntil();
+    }
 });
