@@ -1,7 +1,7 @@
 const camera = new Camara($('#player')[0]);
 
 var url = window.location.href;
-var swLocation = '../sw.js';
+var swLocation = 'sw.js';
 
 var swReg;
 
