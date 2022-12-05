@@ -1,13 +1,7 @@
-/**
 
-  Ejemplo de CRUD con PouchDB: agenda
-  @date 2018-02-22
-  @author parzibyte
-
-  No olvides visitar https://www.parzibyte.me/blog
-*/
 var bd = new PouchDB("agenda"),
   $nombreCompleto = document.querySelector("#nombreCompleto"),
+  $titulo = document.querySelector("#titulo"),
   $direccion = document.querySelector("#direccion"),
   $telefono = document.querySelector("#telefono"),
   $btnGuardar = document.querySelector("#btnGuardar"),
@@ -19,12 +13,14 @@ var bd = new PouchDB("agenda"),
   //Variable global para referirnos a la revisión del contacto editado
 $btnGuardar.addEventListener("click", function() {
   var nombreCompleto = $nombreCompleto.value,
+      titulo = $titulo.value,
       direccion = $direccion.value,
       telefono = $telefono.value;
 
-  if (nombreCompleto && direccion && telefono) {
+  if (nombreCompleto && titulo && direccion && telefono) {
     bd.post({
         nombre: nombreCompleto,
+        titulo: titulo, 
         direccion: direccion,
         telefono: telefono,
       })
@@ -45,12 +41,14 @@ $btnCancelarEdicion.addEventListener("click", function() {
 
 $btnGuardarCambios.addEventListener("click", function() {
   var nombreCompleto = $nombreCompleto.value,
+    titulo = $titulo.value,
     direccion = $direccion.value,
     telefono = $telefono.value;
 
-  if (nombreCompleto && direccion && telefono) {
+  if (nombreCompleto && titulo && direccion && telefono) {
     bd.put({
         nombre: nombreCompleto,
+        titulo: titulo,
         direccion: direccion,
         telefono: telefono,
         _id: idTemporalContacto,
@@ -79,7 +77,7 @@ var cancelarEdicion = function() {
   $btnGuardarCambios.style.display = "none";
   $btnCancelarEdicion.style.display = "none";
 
-  $nombreCompleto.value = $direccion.value = $telefono.value = "";
+  $nombreCompleto.value = $titulo.value = $direccion.value = $telefono.value = "";
 
   idTemporalContacto = null;
   revTemporalContacto = null;
@@ -100,6 +98,10 @@ var consultarContactos = function() {
 
       htmlCuerpoTabla += "<td>";
       htmlCuerpoTabla += contacto.nombre;
+      htmlCuerpoTabla += "</td>";
+
+      htmlCuerpoTabla += "<td>";
+      htmlCuerpoTabla += contacto.titulo;
       htmlCuerpoTabla += "</td>";
 
       htmlCuerpoTabla += "<td>";
@@ -184,9 +186,9 @@ var editarContacto = function() {
     prepararParaEditar();
 
     $nombreCompleto.value = contacto.nombre;
+    $titulo.value = contacto.titulo;
     $direccion.value = contacto.direccion;
     $telefono.value = contacto.telefono;
-
     idTemporalContacto = contacto._id;
     revTemporalContacto = contacto._rev;
   });

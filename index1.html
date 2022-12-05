@@ -1,44 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <script src="pouchdb.min.js"></script>
+    <script src="pouchdb.min.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="TemplateMo">
+    <meta name="" content="">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
 
     <title>Sport</title>
-
-    <link
-      href="https://fonts.googleapis.com/css?family=Quicksand:300,400"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato:400,300"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-    />
-    <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css"/>
-
+    
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/js/libs/plugins/mdtoast.min.css">
    <!--<link rel="stylesheet" href="assets/css/style.css">-->
-
-    <link rel="manifest" href="manifest.json">
-
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="assets/css/fontawesome.css">
     <link rel="stylesheet" href="assets/css/templatemo-stand-blog.css">
     <link rel="stylesheet" href="assets/css/owl.css">
 </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+<div id="preloader">
+  <div class="jumper">
+      <div></div>
+      <div></div>
+      <div></div>
+  </div>
+</div>  
+<!-- ***** Preloader End ***** -->
+
 <!-- Header -->
 <header class="">
   <nav class="navbar navbar-expand-lg">
@@ -74,32 +68,55 @@
     </div>
   </nav>
 </header>
-<br><br><br><br>
 
-<body>
+<!-- Page Content -->
+    <!-- Banner Starts Here -->
+    <div class="heading-page header-text">
+      <section class="page-heading">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="text-content">
+                <h4>Publica</h4>
+                <h2>Crea tu post!</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Banner Ends Here -->
+
   <section class="contact-us">
     <div class="container">
       <div class="row">
-        <div class="col-log-12">
+        <div class="col-lg-12">
           <div class="down-contact">
             <div class="row">
               <div class="col-lg-8">
                 <div class="sidebar-item contact-form">
                   <div class="sidebar-heading">
-                    <h2>Agenda tu dia</h2>
+                    <h2>Agenda tus futuros publicaciones</h2>
                   </div>
                   <div class="content">
+                    <form id="contact" action="" method="post">
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
                           <fieldset>
-                            <label for="nombreCompleto">Nombre:</label>
+                            <label for="nombreCompleto">Autor:</label>
                           <input placeholder="Nombre y apellidos" type="text" name="nombreCompleto" id="nombreCompleto" />
                           </fieldset>
                         </div>
                         <div class="col-md-6 col-sm-12">
                           <fieldset>
-                            <label for="direccion">Dirección:</label>
-                            <textarea placeholder="Escribe la dirección..." name="direccion" id=direccion rows="4" cols="30"></textarea>
+                            <label for="titulo">Totulo del tema:</label>
+                          <input placeholder="ejemplo Finales de los mundiales" type="titulo" name="titulo" id="titulo" />
+                          </fieldset>
+                        </div>
+                        <div class="col-sm-12">
+                          <fieldset>
+                            <label for="direccion">Descripcion:</label>
+                            <textarea placeholder="Desacribe sobre el tema..." name="tema" id=direccion rows="6" cols="30"></textarea>
                           </fieldset>
                         </div>
                         <div class="col-md-12 col-sm-12">
@@ -124,6 +141,7 @@
                           </fieldset>
                         </div>
                     </div>
+                    </form>
                   </div>
                 </div>
               </div> 
@@ -135,8 +153,8 @@
                   </div>
                   <div class="content">
                     <div id="location-btn" class="fab-marker">
-                      <div id="modal"> <a href="#">Ubicacion </a> </div>
-                      <!-- <i class="fa fa-map-marker-alt"></i> -->
+                      <div id="modal" class="fa fa-map-marker-alt"><a href="#">Ubicacion</a></div>
+                      
                     </div>
                     <ul>
                       <li>
@@ -148,17 +166,14 @@
                         <button id="tomar-foto-btn">
                           <i class="fa fa-camera"></i>
                           Tomar Foto
-                        </button>
+                        
                          <!-- boton de enviar -->
                           <div id="photo-btn" class="fab-photo">
-                            <i class="fa fa-camera"></i>
-                          </div>
+                             <i class="fa fa-camera"></i>
+                            </div>
+                        </button>
                       </div>
                       </div>
-                      <li>
-                        <h5>sporty@gmail.com</h5>
-                        <span>Correo electronico</span>
-                      </li>
                       <li>
                         <h5>Barrio gdalupe, 
                           <br>Praesent laoreet 10660</h5>
@@ -170,29 +185,40 @@
             </div>
           </div>
         </div>
+        <style>
+          #tabla {
+     overflow:scroll;
+     height:200px;
+     width:200px;
+}
+#tabla table {
+    width:500px;
+    background-color:lightgray;
+}
+        </style>
+
+        <divclass="col-md-12 col-sm-12">
+          <h1>Datos de la agenda</h1>
+          <table id="tabla" >
+            <th>
+              <tr>
+                <th>Nombre</th>
+                <th>Titulo</th>
+                <th>Descripcion</th>
+                <th>Teléfono</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+              </tr>
+            </th>
+          <tbody id="cuerpoTabla">
+            <!-- <div id="modal"> <a href="#">Ubicacion </a> </div> -->
+          </tbody>
+        </table>
+      </div>
+      <!-- Fin Modal -->
       </div> 
     </div>  
   </section>
-  <div class="container">
-  <h1>Datos de la agenda</h1>
-  <br/>
-  <table>
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Dirección</th>
-        <th>Teléfono</th>
-        <th>Editar</th>
-        <th>Eliminar</th>
-      </tr>
-    </thead>
-    <tbody id="cuerpoTabla">
-      <!-- <div id="modal"> <a href="#">Ubicacion </a> </div> -->
-    </tbody>
-  </table>
-</div>
-<!-- Fin Modal -->
-</div>
   <footer>
     <div class="container">
       <div class="row">
