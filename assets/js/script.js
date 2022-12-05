@@ -113,12 +113,12 @@ var consultarContactos = function() {
       htmlCuerpoTabla += "</td>";
             
       htmlCuerpoTabla += "<td>";
-      htmlCuerpoTabla += "<button class='btn-editar' data-id-contacto='" + contacto._id + "'>Editar</button>";
+      htmlCuerpoTabla += "<button class='btn-editar btn-primary' data-id-contacto='" + contacto._id + "'>Editar</button>";
       htmlCuerpoTabla += "</td>";
 
       //Nuevo botón
       htmlCuerpoTabla += "<td>";
-      htmlCuerpoTabla += "<button class='btn-eliminar' data-id-contacto='" + contacto._id + "'>Eliminar</button>";
+      htmlCuerpoTabla += "<button class='btn-eliminar btn-danger' data-id-contacto='" + contacto._id + "'>Eliminar</button>";
       htmlCuerpoTabla += "</td>";
 
       htmlCuerpoTabla += "</tr>";
